@@ -1,0 +1,13 @@
+{
+  "name": "Discourse-classic",
+  "about_url": "",
+  "license_url": "",
+   "assets": {
+       "font": ""
+   },
+   "color_schemes": {
+       "Scheme Name": {
+          "primary": "AAA"
+        }
+    }
+}
