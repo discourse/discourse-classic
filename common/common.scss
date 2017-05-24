@@ -9,6 +9,7 @@ body {
     padding: 0;
     box-shadow: 2px 2px 8px rgba(0,0,0,.12);
     margin-left: 30px;
+
     .regular {
         margin-top: 0;
     }
@@ -16,7 +17,6 @@ body {
         content: "";
     width: 0;
      height: 0;
-
         position: absolute;
         left: -10px;
         top: 27px;
@@ -32,6 +32,7 @@ body {
          margin-top: 0;
          padding: 0 10px;
      }
+
 
 }
 .topic-map {
@@ -272,4 +273,44 @@ img.avatar {
 
 .top-lists, .categories-and-latest {
     padding: 10px;
+}
+
+/* user profile */
+
+.user-main {
+    .about {
+        .details, .collapsed-info .details {
+            background: transparent !important;
+        }
+        .controls a {
+            width: auto;
+        }
+        .bio {
+            background: $secondary;
+            padding: 5px 10px;
+            border-radius: 5px;
+                box-shadow: 2px 2px 8px rgba(0,0,0,.12);
+
+            &:before {
+                content: "";
+                position: absolute;
+                margin-left: -20px;
+                margin-top: 10px;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-right: 10px solid $secondary;
+                z-index: 9;
+            }
+        }
+    }
+    .user-right {
+        padding-left: 20px;
+    }
+}
+
+.user-navigation, .user-preferences {
+    padding-left: 10px;
+    background: #fff;
+    border-radius: 5px;
+    margin-right: 20px;
 }
