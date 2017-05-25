@@ -137,6 +137,14 @@ section.avatars.clearfix {
 
 /* topic list */
 
+.topic-list-latest tr {
+    &:nth-child(2n) {
+                 background: scale-color($primary, $lightness: 97%);
+             }
+    tr {background: transparent !important;}
+
+}
+
 #list-area {
     .contents {
         background: $secondary;
@@ -278,9 +286,25 @@ img.avatar {
 /* user profile */
 
 .user-main {
+    .user-table {
+        box-sizing: border-box;
+        background: $secondary;
+        box-shadow: 2px 2px 8px rgba(0,0,0,.12);
+        border-radius: 5px;
+        padding: 20px;
+        border: 1px solid scale-color($primary, $lightness: 80%);
+        margin-top: 20px;
+        .stats-section ul {
+            border-top: 1px solid scale-color($primary, $lightness: 80%);
+            border-bottom: 1px solid scale-color($primary, $lightness: 80%);
+            li {margin: 0;}
+        }
+    }
+
     .about {
         .details, .collapsed-info .details {
             background: transparent !important;
+            border-bottom: none !important;
         }
         .controls a {
             width: auto;
@@ -302,15 +326,34 @@ img.avatar {
                 z-index: 9;
             }
         }
+        .secondary {
+            background: transparent;
+            border-top: 1px solid scale-color($primary, $lightness: 80%);
+            border-bottom: 1px solid scale-color($primary, $lightness: 80%);
+            margin: 10px 0;
+        }
+
     }
+  .user-navigation, .user-preferences {
+      padding-left: 0;
+  }
     .user-right {
         padding-left: 20px;
     }
+    .nav-stacked.activity-list {
+        padding-top: 0;
+    }
 }
+  .nav-pills.user-nav {
+            margin-left: 0;
+        }
 
-.user-navigation, .user-preferences {
-    padding-left: 10px;
-    background: #fff;
-    border-radius: 5px;
-    margin-right: 20px;
+
+@keyframes background-fade-highlight {
+  0% {
+    background-color: lighten($tertiary, 55%);
+  }
+  100% {
+    background-color: $secondary;
+  }
 }
