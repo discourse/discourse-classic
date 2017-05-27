@@ -275,8 +275,12 @@ img.avatar {
 
 .menu-panel {
     border: none;
-        box-shadow: 0px 3px 8px rgba(0,0,0,.12);
+    box-shadow: 0px 3px 8px rgba(0,0,0,.12);
+    border-radius: 5px;
+}
 
+#user-card {
+    border-radius: 5px;
 }
 
 .top-lists, .categories-and-latest {
@@ -302,6 +306,17 @@ img.avatar {
     }
 
     .about {
+        &.has-background {
+            .details {
+              background: rgba(#eee, .85) !important;
+              padding-bottom: 10px;
+
+            }
+            .secondary {
+                background: rgba(#eee, 1);
+                margin: 0px;
+            }
+        }
         .details, .collapsed-info .details {
             background: transparent !important;
             border-bottom: none !important;
@@ -310,12 +325,10 @@ img.avatar {
             width: auto;
         }
         .bio {
-            background: $secondary;
-            padding: 5px 10px;
-            border-radius: 5px;
-                box-shadow: 2px 2px 8px rgba(0,0,0,.12);
-
-            &:before {
+            p {
+             padding: 5px 10px;
+                &:first-of-type {
+                    &:before {
                 content: "";
                 position: absolute;
                 margin-left: -20px;
@@ -324,7 +337,15 @@ img.avatar {
                 border-bottom: 10px solid transparent;
                 border-right: 10px solid $secondary;
                 z-index: 9;
+                    }
             }
+
+            }
+            background: $secondary;
+            border-radius: 5px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,.12);
+
+
         }
         .secondary {
             background: transparent;
@@ -349,6 +370,8 @@ img.avatar {
         }
 
 
+
+
 @keyframes background-fade-highlight {
   0% {
     background-color: lighten($tertiary, 55%);
@@ -356,4 +379,61 @@ img.avatar {
   100% {
     background-color: $secondary;
   }
+}
+
+.popup-menu {
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.12);
+}
+
+.modal-inner-container {
+    border-radius: 5px;
+}
+
+.small-action .small-action-desc, .small-action .topic-avatar i {
+    color: scale-color($primary, $lightness: 25%);
+}
+
+/* search */
+
+.search-advanced .search-advanced-options {
+    border-color: scale-color($primary, $lightness: 80%);
+    border-top: none;
+}
+
+.search-advanced-btn  {
+    border-radius: 5px 5px 0 0 !important;
+}
+.search-title {padding: 0 10px;}
+.fps-result {
+    background: $secondary;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,.12);
+
+}
+
+/* badges */
+
+.badge-card {
+    background: $secondary;
+    border-radius: 5px;
+   .badge-contents .badge-icon {
+       background: darken($secondary, 2%);
+           border-radius: 5px 0 0 5px;
+
+   }
+}
+
+/* groups */
+
+.groups-table {
+    background: $secondary;
+    border-radius: 5px;
+    th, td, tr {
+        padding: 10px;
+    }
+    span {
+       padding: 0 10px;
+    }
 }
