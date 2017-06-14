@@ -1,9 +1,9 @@
 body {
-    background: #eee;
+    background: darken($secondary, 7%);
 }
 
 .topic-body {
-    background: #fff;
+    background: $secondary;
     border-radius: 5px;
     margin-bottom: 15px;
     padding: 0;
@@ -54,14 +54,14 @@ body {
 }
 .post-menu-area {
     margin-bottom: 0;
-    border-top: 1px solid #eee;
+    border-top: 1px solid lighten($primary, 80%);
     opacity: .3;
     transition: opacity .7s;
 
 .actions {
     button {
     padding: 12px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid lighten($primary, 80%);
     margin: 0;
     &.reply {
         margin-left: 0;
@@ -139,7 +139,7 @@ section.avatars.clearfix {
 
 .topic-list-latest tr {
     &:nth-child(2n) {
-                 background: scale-color($primary, $lightness: 97%);
+                 background: darken($secondary, 3%);
              }
     tr {background: transparent !important;}
 
@@ -155,14 +155,14 @@ section.avatars.clearfix {
          .topic-list-item {
              border: none;
              &:nth-child(2n) {
-                 background: scale-color($primary, $lightness: 97%);
+                 background: darken($secondary, 3%);
              }
          }
          .topic-list thead {
 
                  border-bottom: 1px solid scale-color($primary, $lightness: 80%);
                  th {
-                     background: scale-color($primary, $lightness: 97%);
+                     background: scale-color($secondary, $lightness: 5%);
                      font-weight: bold;
                      &:first-of-type {
                          border-radius: 5px 0 0 0;
@@ -308,12 +308,12 @@ img.avatar {
     .about {
         &.has-background {
             .details {
-              background: rgba(#eee, .85) !important;
+              background: rgba(lighten($primary, 80%), .85) !important;
               padding-bottom: 10px;
 
             }
             .secondary {
-                background: rgba(#eee, 1);
+                background: rgba(lighten($primary, 80%), 1);
                 margin: 0px;
             }
         }
@@ -437,3 +437,15 @@ img.avatar {
        padding: 0 10px;
     }
 }
+
+/*
+
+other bullet styles might need
+
+  a.badge-category.home {
+        background: transparent !important;
+
+    }
+
+
+*/
