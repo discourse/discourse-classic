@@ -1,5 +1,19 @@
+@function brightness($color) {
+  @return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114));
+}
+
+@function dark-light-diff($adjusted-color, $comparison-color, $lightness, $darkness) {
+  @if brightness($adjusted-color) < brightness($comparison-color) {
+    @return scale-color($adjusted-color, $lightness: $lightness);
+  } @else {
+    @return scale-color($adjusted-color, $lightness: $darkness);
+  }
+}
+
+
+
 body {
-    background: darken($secondary, 7%);
+    background: dark-light-diff($primary, $secondary, 90%, -95%);
 }
 
 .topic-body {
@@ -22,7 +36,7 @@ body {
         top: 27px;
         border-top: 10px solid transparent;
         border-bottom: 10px solid transparent;
-        border-right:10px solid #fff;
+        border-right:10px solid $secondary;
 
     }
     .topic-meta-data {
@@ -52,20 +66,24 @@ body {
 .topic-map-expanded {
     border-top: none;
 }
+.topic-avatar {
+    border-top: none;
+}
+
 .post-menu-area {
     margin-bottom: 0;
-    border-top: 1px solid lighten($primary, 80%);
+    border-top: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
     opacity: .3;
     transition: opacity .7s;
 
 .actions {
     button {
     padding: 12px;
-    border-left: 1px solid lighten($primary, 80%);
+    border-left: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
     margin: 0;
     &.reply {
         margin-left: 0;
-        background: scale-color($tertiary, $lightness: 90%);
+        background: dark-light-diff($tertiary, $secondary, 85%, -65%);
         color: $tertiary;
         border-radius: 0 0 5px 0;
         .topic-owner & {
@@ -73,7 +91,7 @@ body {
 
         }
         &:hover {
-        background: scale-color($tertiary, $lightness: 80%);
+        background: dark-light-diff($tertiary, $secondary, 85%, -65%);
         color: $tertiary;
         }
     }
@@ -95,21 +113,21 @@ body {
 
 
 .badge-wrapper.box {
-    text-shadow: 0 1px scale-color($primary, $lightness: 25%);
+    text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -70%);
     margin-top: 0;
     .badge-category-bg {
     border-radius: 5px;
-    border: 1px solid scale-color($primary, $lightness: 40%);
+    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%);
     box-shadow: inset 0 1px 0 rgba($secondary, .25);
     }
 }
 
 .timeline-container .topic-timeline {
     .timeline-handle {
-     background: scale-color($primary, $lightness: 40%);
+     background: dark-light-diff($primary, $secondary, 50%, -20%);
     }
     .timeline-scrollarea {
-    border-color: scale-color($primary, $lightness: 40%);
+    border-color: dark-light-diff($primary, $secondary, 50%, -20%);
     }
 }
 
@@ -124,14 +142,17 @@ section.avatars.clearfix {
 }
 
 #reply-control {
-    border-top: 1px solid scale-color($primary, $lightness: 80%);
+    border-top: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
     box-shadow: 0 -2px 5px rgba(0,0,0,.07);
    .d-editor-button-bar {
     border-bottom: none;
    }
-   .btn {min-width: 25px;}
+   .btn {
+    min-width: 25px;
+    border-color: dark-light-diff($primary, $secondary, 90%, -65%);
+   }
    .btn:hover {
-       background: scale-color($primary, $lightness: 90%);
+       background: dark-light-diff($primary, $secondary, 60%, -50%);
    }
 }
 
@@ -139,9 +160,8 @@ section.avatars.clearfix {
 
 .topic-list-latest tr {
     &:nth-child(2n) {
-                 background: darken($secondary, 3%);
+                 background: dark-light-diff($primary, $secondary, 95%, -90%);
              }
-    tr {background: transparent !important;}
 
 }
 
@@ -150,19 +170,19 @@ section.avatars.clearfix {
         background: $secondary;
         border-radius: 5px;
         box-shadow: 2px 2px 8px rgba(0,0,0,.12);
-        border: 1px solid scale-color($primary, $lightness: 80%);
+        border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
 
          .topic-list-item {
              border: none;
              &:nth-child(2n) {
-                 background: darken($secondary, 3%);
+                 background: dark-light-diff($primary, $secondary, 95%, -90%);
              }
          }
          .topic-list thead {
 
-                 border-bottom: 1px solid scale-color($primary, $lightness: 80%);
+             border-bottom: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
                  th {
-                     background: scale-color($secondary, $lightness: 5%);
+                    background: dark-light-diff($primary, $secondary, 95%, -90%);
                      font-weight: bold;
                      &:first-of-type {
                          border-radius: 5px 0 0 0;
@@ -188,9 +208,9 @@ section.avatars.clearfix {
 
 .nav-pills>li.active>a, .nav-pills>li>a.active {
     border-radius: 5px;
-    text-shadow: 0 1px scale-color($primary, $lightness: 25%);
+    text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -70%);
     box-shadow: inset 0 1px 0 rgba($secondary, .25);
-    border: 1px solid scale-color($primary, $lightness: 40%);
+    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%);
 }
 
 .nav-pills>li>a:hover {
@@ -199,7 +219,7 @@ section.avatars.clearfix {
 
 .btn:not(.bulk-select) {
     border-radius: 5px;
-    border: 1px solid scale-color($primary, $lightness: 80%);
+    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%);
         box-shadow: inset 0 1px 0 rgba($secondary, .25);
 
 }
@@ -214,9 +234,9 @@ section.avatars.clearfix {
     .category-breadcrumb {
     border-radius: 5px;
     margin-right: 0px;
-    border: 1px solid scale-color($primary, $lightness: 40%);
+    border: 1px solid dark-light-diff($primary, $secondary, 50%, -20%);
     a.badge-category:not(.home) {
-            text-shadow: 0 1px scale-color($primary, $lightness: 25%);
+            text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -20%);
     }
         .has-drop.box {
             a.badge-category {
@@ -238,9 +258,9 @@ section.avatars.clearfix {
     background: $tertiary;
     color: $secondary;
     border-radius: 5px;
-    text-shadow: 0 1px scale-color($primary, $lightness: 25%);
+    text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -20%);
     box-shadow: inset 0 2px 10px rgba($secondary, .25);
-    border: 1px solid scale-color($primary, $lightness: 40%);
+    border: 1px solid dark-light-diff($primary, $secondary, 50%, -20%);
     &:hover {
             background: scale-color($tertiary, $lightness: -20%);
 
@@ -257,15 +277,15 @@ img.avatar {
 
     .icons>li {
     &:first-of-type {
-        border-left: 1px solid scale-color($primary, $lightness: 80%);
+        border-left: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
         border-radius: 5px 0 0 5px;
     }
     &:last-of-type {
         border-radius: 0 5px 5px 0;
     }
-    border-right: 1px solid scale-color($primary, $lightness: 80%);
-    border-top: 1px solid scale-color($primary, $lightness: 80%);
-    border-bottom: 1px solid scale-color($primary, $lightness: 80%);
+    border-right: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+    border-top: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+    border-bottom: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
     &.active {
         border-bottom: none;
     }
@@ -296,11 +316,11 @@ img.avatar {
         box-shadow: 2px 2px 8px rgba(0,0,0,.12);
         border-radius: 5px;
         padding: 20px;
-        border: 1px solid scale-color($primary, $lightness: 80%);
+        border: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
         margin-top: 20px;
         .stats-section ul {
-            border-top: 1px solid scale-color($primary, $lightness: 80%);
-            border-bottom: 1px solid scale-color($primary, $lightness: 80%);
+            border-top: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
+            border-bottom: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
             li {margin: 0;}
         }
     }
@@ -349,8 +369,8 @@ img.avatar {
         }
         .secondary {
             background: transparent;
-            border-top: 1px solid scale-color($primary, $lightness: 80%);
-            border-bottom: 1px solid scale-color($primary, $lightness: 80%);
+            border-top: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
+            border-bottom: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
             margin: 10px 0;
         }
 
@@ -374,7 +394,7 @@ img.avatar {
 
 @keyframes background-fade-highlight {
   0% {
-    background-color: lighten($tertiary, 55%);
+    background-color: dark-light-diff($tertiary, $secondary, 85%, -65%);
   }
   100% {
     background-color: $secondary;
@@ -397,7 +417,7 @@ img.avatar {
 /* search */
 
 .search-advanced .search-advanced-options {
-    border-color: scale-color($primary, $lightness: 80%);
+    border-color: dark-light-diff($primary, $secondary, 90%, -65%);
     border-top: none;
 }
 
@@ -436,6 +456,14 @@ img.avatar {
     span {
        padding: 0 10px;
     }
+}
+
+/* admin */
+
+.boxed.white {
+    padding: 0 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.12);
 }
 
 /*
