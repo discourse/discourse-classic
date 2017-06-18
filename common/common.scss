@@ -29,8 +29,8 @@ body {
     }
     &:before {
         content: "";
-    width: 0;
-     height: 0;
+        width: 0;
+        height: 0;
         position: absolute;
         left: -10px;
         top: 27px;
@@ -39,6 +39,7 @@ body {
         border-right:10px solid $secondary;
 
     }
+
     .topic-meta-data {
         padding: 10px;
     }
@@ -49,6 +50,14 @@ body {
 
 
 }
+
+.moderator .topic-body:before {
+    border-right:10px solid dark-light-diff($highlight, $secondary, 70%, -80%);
+}
+.deleted .topic-body:before {
+    border-right: 10px solid dark-light-diff($danger, $secondary, 60%, -60%);
+}
+
 .topic-map {
     margin-top: 0;
     border-radius: 0 0 10px 10px;
@@ -70,11 +79,19 @@ body {
     border-top: none;
 }
 
+.post-actions {
+    .post-action {
+        margin-right: 10px;
+        padding-bottom: 10px;
+    }
+}
+
 .post-menu-area {
     margin-bottom: 0;
     border-top: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
     opacity: .3;
     transition: opacity .7s;
+
 
 .actions {
     button {
@@ -102,6 +119,28 @@ body {
 
     nav.post-controls button.bookmark {
         padding: 12px;
+    }
+    nav.post-controls .show-replies {
+        margin-left: 0;
+        height: 42px;
+
+    }
+}
+
+.embedded-posts {
+    padding: 20px 0;
+    background:  dark-light-diff($primary, $secondary, 90%, -95%);
+    .topic-body {
+        overflow: visible;
+        width: calc(100% - 120px);
+
+    }
+}
+
+.post-links-container {
+    .post-links {
+        padding: 10px 10px 0 10px;
+        margin-top: 0;
     }
 }
 
@@ -135,6 +174,7 @@ body {
     border-top: 1px solid scale-color($primary, $lightness: 90%);
     margin-top: 0;
     padding-top: 10px;
+    width: 98%;
 }
 
 section.avatars.clearfix {
@@ -158,12 +198,17 @@ section.avatars.clearfix {
 
 /* topic list */
 
-.topic-list-latest tr {
-    &:nth-child(2n) {
-                 background: dark-light-diff($primary, $secondary, 95%, -90%);
-             }
-
-}
+.topic-list-latest
+    tr {
+     &:nth-child(2n) {
+        background: dark-light-diff($primary, $secondary, 95%, -90%);
+        }
+    }
+    td.main-link {
+        tr {
+            background: transparent !important;
+        }
+    }
 
 #list-area {
     .contents {
@@ -288,14 +333,20 @@ img.avatar {
     border-bottom: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
     &.active {
         border-bottom: none;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0
     }
 
+    }
+    .icons .icon {
+    color: dark-light-diff($secondary, $primary, 50%, -50%);
     }
 }
 
 .menu-panel {
-    border: none;
-    box-shadow: 0px 3px 8px rgba(0,0,0,.12);
+    margin-top: -1px;
+    border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+    box-shadow: 0px 4px 8px rgba(0,0,0,.12);
     border-radius: 5px;
 }
 
@@ -461,7 +512,7 @@ img.avatar {
 /* admin */
 
 .boxed.white {
-    padding: 0 20px;
+    padding: 5px 20px;
     border-radius: 5px;
     box-shadow: 2px 2px 8px rgba(0,0,0,0.12);
 }
