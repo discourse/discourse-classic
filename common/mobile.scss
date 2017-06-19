@@ -1,0 +1,28 @@
+.topic-list th, .topic-list td {
+    padding-left: 5px;
+}
+
+.topic-body {
+    margin-left: 0;
+    &:before {
+        display: none;
+    }
+}
+
+.topic-meta-data {
+    margin-left: 0;
+}
+
+.topic-avatar {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.topic-map {
+    margin-bottom: 0;
+    border-radius: 0 0 5px 5px;
+}
+
+.menu-panel.slide-in {
+    top: 49px !important;
+}
