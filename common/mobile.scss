@@ -26,3 +26,43 @@
 .menu-panel.slide-in {
     top: 49px !important;
 }
+
+.who-liked {
+    margin-left: 0;
+    padding-left: 10px;
+}
+
+
+/* profile */
+
+.user-main .user-right {
+    padding-left: 0;
+}
+
+.user-main .about .details .primary .bio {
+    padding: 0;
+    box-shadow: none;
+    p {
+        padding: 0;
+    }
+}
+
+.user-main .about .details .primary .primary-textual {
+    padding-left: 0;
+}
+
+.user-main .about .bio p:first-of-type:before {
+    display: none;
+}
+
+.user-main .about .secondary dl dd {
+    margin: 0;
+}
+
+.secondary, .user-main .about .details, .user-main .about .collapsed-info .details, .user-main .about {
+    background: $secondary !important;
+}
+
+.user-preferences .control-group {
+    padding: 0;
+}
