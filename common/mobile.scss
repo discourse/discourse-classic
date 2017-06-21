@@ -47,8 +47,8 @@
     }
 }
 
-.user-main .about .details .primary .primary-textual {
-    padding-left: 0;
+.stats-section li.linked-stat a {
+    color: $tertiary;
 }
 
 .user-main .about .bio p:first-of-type:before {
@@ -59,10 +59,75 @@
     margin: 0;
 }
 
+.user-main section.controls {
+    float: right;
+}
+
 .secondary, .user-main .about .details, .user-main .about .collapsed-info .details, .user-main .about {
     background: $secondary !important;
 }
 
 .user-preferences .control-group {
     padding: 0;
+}
+
+span.btn-group.notification-options {
+    padding: 20px 0;
+    margin-top: 20px;
+    border-top: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+    border-bottom: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+}
+
+#suggested-topics {
+    table.topic-list {
+        background: $secondary;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,.07);
+
+        &>tbody>tr:first-of-type {
+            border-top: none;
+        }
+    }
+}
+
+.search-title {
+    padding: 0;
+    .sort-by {
+        float: left;
+        }
+}
+
+button.search-advanced-btn.btn {
+    margin-top: 10px;
+}
+
+.bulk-select.btn {
+    border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+}
+
+.search-advanced .search-advanced-options {
+    border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+    border-top: none;
+}
+
+.fps-select {
+    margin: 20px 0;
+    a {
+        padding-left: 0;
+    }
+}
+
+.gap {
+    padding-left: 0;
+}
+
+.post-actions {
+    .post-action {
+        padding-top: 10px;
+    }
+}
+
+.list-controls .nav-pills>li {
+    border-radius: 5px;
 }
