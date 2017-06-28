@@ -1,3 +1,5 @@
+//color functions
+
 @function brightness($color) {
 	@return ((red($color) * .299) + (green($color) * .587) + (blue($color) * .114));
 }
@@ -9,9 +11,13 @@
 		@return scale-color($adjusted-color, $lightness: $darkness);
 	}
 }
+
 body {
 	background: dark-light-diff($primary, $secondary, 90%, -95%);
 }
+
+//topic
+
 .topic-body {
 	background: $secondary;
 	border-radius: 5px;
@@ -173,7 +179,26 @@ section.avatars.clearfix {
 	}
 }
 
-/* topic list */
+@keyframes background-fade-highlight {
+	0% {
+		background-color: dark-light-diff($tertiary, $secondary, 85%, -65%);
+	}
+	100% {
+		background-color: $secondary;
+	}
+}
+.popup-menu {
+	border-radius: 5px;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, .12);
+}
+.modal-inner-container {
+	border-radius: 5px;
+}
+.small-action .small-action-desc, .small-action .topic-avatar i {
+	color: scale-color($primary, $lightness: 25%);
+}
+
+// topic list
 
 .topic-list-latest tr {
 	&:nth-child(2n) {
@@ -260,6 +285,12 @@ td.main-link {
 		border-radius: 5px;
 		margin-right: 0px;
 		border: 1px solid dark-light-diff($primary, $secondary, 50%, -60%);
+        a.badge-category {
+            border-radius: 5px 0 0 5px;
+        }
+        a.badge-category.category-dropdown-button {
+            border-radius: 0 5px 5px 0;
+        }
 		a.badge-category:not(.home) {
 			text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -20%);
 		}
@@ -292,7 +323,7 @@ img.avatar {
 	border-radius: 5px;
 }
 
-/* header */
+// header
 
 .d-header {
 	.icons>li {
@@ -329,7 +360,7 @@ img.avatar {
 	padding: 10px;
 }
 
-/* user profile */
+// user profile
 
 .user-main {
 	.user-table {
@@ -406,26 +437,8 @@ img.avatar {
 .nav-pills.user-nav {
 	margin-left: 0;
 }
-@keyframes background-fade-highlight {
-	0% {
-		background-color: dark-light-diff($tertiary, $secondary, 85%, -65%);
-	}
-	100% {
-		background-color: $secondary;
-	}
-}
-.popup-menu {
-	border-radius: 5px;
-	box-shadow: 2px 2px 8px rgba(0, 0, 0, .12);
-}
-.modal-inner-container {
-	border-radius: 5px;
-}
-.small-action .small-action-desc, .small-action .topic-avatar i {
-	color: scale-color($primary, $lightness: 25%);
-}
 
-/* search */
+// search
 
 .search-advanced .search-advanced-options {
 	border-color: dark-light-diff($primary, $secondary, 90%, -65%);
@@ -444,7 +457,7 @@ img.avatar {
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, .12);
 }
 
-/* badges */
+// badges
 
 .badge-card {
 	background: $secondary;
@@ -455,7 +468,7 @@ img.avatar {
 	}
 }
 
-/* groups */
+// groups
 
 .groups-table {
 	background: $secondary;
@@ -468,7 +481,7 @@ img.avatar {
 	}
 }
 
-/* admin */
+// admin
 
 .boxed.white {
 	padding: 5px 20px;
@@ -491,15 +504,3 @@ img.avatar {
     border-radius: 5px;
     border: 1px solid darken($highlight, 20%);
 }
-
-/*
-
-other bullet styles might need
-
-  a.badge-category.home {
-        background: transparent !important;
-
-    }
-
-
-*/
