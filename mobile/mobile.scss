@@ -5,6 +5,7 @@
 }
 
 .topic-body {
+    width: 100% !important;
     margin-left: 0;
     &:before {
         display: none;
@@ -43,6 +44,26 @@
 span.topic-post-badges {
     margin-right: 10px;
 }
+
+.small-action { 
+    padding: 0;
+    .topic-avatar {
+    display: none;
+    }
+}
+
+.toggle-summary {
+    button.widget-button.btn.btn.btn-primary.btn-text {
+        background: $tertiary;
+        color: $secondary;
+    }
+}
+.link-summary {
+    button.widget-button.btn.btn.no-text.btn-icon {
+        border: none;
+    }
+}
+
 
 /* profile */
 
@@ -153,9 +174,11 @@ button.search-advanced-btn.btn {
 
 .nav-pills {
     margin-left: 0;
-    a {
+    ul:not(.drop) { 
+        a {
         border-radius: 5px;
         border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
         box-shadow: inset 0 1px 2px rgba($secondary, .5), inset 0 -1px 2px rgba($primary, .25);
+    }
     }
 }

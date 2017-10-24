@@ -75,7 +75,7 @@ body {
 	.buttons .btn {
 		background: transparent;
 		border-radius: 0 0 5px 0 !important;
-		border-color: dark-light-diff($primary, $secondary, 50%, -70%) !important;
+		border-color: dark-light-diff($primary, $secondary, 90%, -95%) !important;
 		&:hover {
 			background: transparent;
 		}
@@ -140,9 +140,11 @@ body {
 	&.top {
 		margin-left: 75px;
 		width: 690px; 
-		padding-top: 15px;
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
+		margin-bottom: 0 !important;
 		border-radius: 5px 5px 0 0;
-		img {
+		.topic-body .cooked img:not(.thumbnail) {
 			max-width: 100%;
 			height: auto;
 		}
