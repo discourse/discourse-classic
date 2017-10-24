@@ -26,6 +26,12 @@ body {
 	border-top: none;
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, .12);
 	margin-left: 30px;
+	@media screen and (max-width: 960px) {
+		width: 90%;
+	  }
+	@media screen and (max-width: 770px) {
+		width: 85%;
+	}
 	.regular {
 		margin-top: 0;
 	}
@@ -208,6 +214,14 @@ section.avatars.clearfix {
 		background: dark-light-diff($primary, $secondary, 95%, -90%);
 	}
 }
+
+.categeory-list tbody {
+	 background: $secondary;
+	 tr:first-of-type {
+		 border-top: none;
+	 }
+}
+
 td.main-link {
 	tr {
 		background: transparent !important;
@@ -326,11 +340,12 @@ ol.category-breadcrumb li {
 	}
 }
 
-.btn.no-text.btn-icon {
-	border-radius: 5px;
-	border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
-	height: 33px !important;
-	box-shadow: inset 0 1px 2px rgba($secondary, .5), inset 0 -1px 2px rgba($primary, .25);
+.list-controls { 
+		.btn.no-text.btn-icon {
+		border-radius: 5px;
+		border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
+		box-shadow: inset 0 1px 2px rgba($secondary, .5), inset 0 -1px 2px rgba($primary, .25);
+	}
 }
 
 img.avatar {
@@ -342,6 +357,7 @@ img.avatar {
 	border-radius: 0 5px 5px 0;
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, .12);
 	border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+	border-color: $secondary;
 }
 
 // header
@@ -366,6 +382,10 @@ img.avatar {
 	}
 	.icons .icon {
 		color: dark-light-diff($secondary, $primary, 50%, -50%);
+	}
+	.drop-down-visible .d-header-icons .active .icon {
+		background: transparent;
+		border-top: none;
 	}
 }
 .menu-panel {

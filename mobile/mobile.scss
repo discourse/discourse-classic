@@ -40,6 +40,10 @@
     }
 }
 
+span.topic-post-badges {
+    margin-right: 10px;
+}
+
 /* profile */
 
 .user-main {
@@ -105,6 +109,10 @@ span.btn-group.notification-options {
     }
 }
 
+#topic-progress-wrapper .topic-admin-menu-button-container {
+    right: 48px;
+}
+
 /* search */
 
 .search-title {
@@ -141,4 +149,13 @@ button.search-advanced-btn.btn {
 
 .list-controls .nav-pills>li {
     border-radius: 5px;
+}
+
+.nav-pills {
+    margin-left: 0;
+    a {
+        border-radius: 5px;
+        border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
+        box-shadow: inset 0 1px 2px rgba($secondary, .5), inset 0 -1px 2px rgba($primary, .25);
+    }
 }
