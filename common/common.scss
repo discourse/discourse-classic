@@ -351,10 +351,10 @@ td.main-link {
 		margin-right: 0px;
 		border: 1px solid dark-light-diff($primary, $secondary, 50%, -60%);
 		.dropdown-header, .dropdown-header.home {
-			border-radius: 5px 0 0 5px;
+			border-radius: 4px 0 0 4px;
 		}
 		.dropdown-header.category-dropdown-button, .dropdown-header.category-dropdown-button.home {
-			border-radius: 0 5px 5px 0;
+			border-radius: 0 4px 4px 0;
 		}
 		
 		li.bullet>.dropdown-header {
