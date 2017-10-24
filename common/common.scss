@@ -81,7 +81,6 @@ body {
 		}
 	}
 	button.widget-button.btn.no-text {
-		border-radius: 0;
 		box-shadow: none
 	}
 }
@@ -239,6 +238,10 @@ section.avatars.clearfix {
 	button {
 		margin-left: 5px;
 	}
+}
+
+.gap {
+	padding-left: 75px;
 }
 
 .read-state {
@@ -438,7 +441,7 @@ img.avatar {
 	box-shadow: 0px 4px 8px rgba(0, 0, 0, .12);
 	border-radius: 5px;
 }
-#user-card {
+.card-content {
 	border-radius: 5px;
 }
 .top-lists, .categories-and-latest {
