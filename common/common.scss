@@ -399,7 +399,7 @@ img.avatar {
 	background: $secondary;
 	border-radius: 0 5px 5px 0;
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, .12);
-	border: 1px solid dark-light-diff($secondary, $primary) !important;
+	border: 1px solid $secondary !important;
 }
 
 // header
