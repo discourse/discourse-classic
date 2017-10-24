@@ -350,6 +350,12 @@ td.main-link {
 		border-radius: 5px;
 		margin-right: 0px;
 		border: 1px solid dark-light-diff($primary, $secondary, 50%, -60%);
+		.dropdown-header.home {
+			border-radius: 5px 0 0 5px;
+		}
+		.dropdown-header.category-dropdown-button.home {
+			border-radius: 0 5px 5px 0;
+		}
 		li.bullet>.dropdown-header {
 			border-radius: 10px;
 		}
