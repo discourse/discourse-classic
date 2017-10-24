@@ -137,7 +137,7 @@ body {
 		overflow: visible;
 		width: calc(100% - 120px);
 	}
-	.top {
+	&.top {
 		margin-left: 75px;
 		width: 690px; 
 		padding-top: 15px;
