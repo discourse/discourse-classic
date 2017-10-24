@@ -74,6 +74,8 @@ body {
 	border: none;
 	.buttons .btn {
 		background: transparent;
+		border-radius: 0 0 5px 0 !important;
+		border-color: dark-light-diff($primary, $secondary, 50%, -70%) !important;
 		&:hover {
 			background: transparent;
 		}
@@ -135,6 +137,28 @@ body {
 		overflow: visible;
 		width: calc(100% - 120px);
 	}
+	.top {
+		margin-left: 75px;
+		width: 690px; 
+		padding-top: 15px;
+		border-radius: 5px 5px 0 0;
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+		@media screen and (max-width: 960px) {
+			width: 90%;
+		}
+		@media screen and (max-width: 770px) {
+			width: 85%;
+		}
+		&:before {
+			display: none;
+		}
+		&.row:before {
+			display: table;
+		}
+	}
 }
 .post-links-container {
 	.post-links {
@@ -178,6 +202,7 @@ section.avatars.clearfix {
 	box-shadow: 0 -2px 5px rgba(0, 0, 0, .07);
 	.d-editor-button-bar {
 		border-bottom: none;
+		height: 29px;
 	}
 	.btn {
 		min-width: 25px;
@@ -207,6 +232,22 @@ section.avatars.clearfix {
 	color: scale-color($primary, $lightness: 25%);
 }
 
+.small-action .small-action-desc {
+	padding-left: 75px;
+	button {
+		margin-left: 5px;
+	}
+}
+
+.read-state {
+	top: 11px;
+	right: 2px;
+}
+
+#topic-progress-wrapper .topic-admin-menu-button-container {
+	right: 50px;
+}
+
 // topic list
 
 .topic-list-latest tr {
@@ -215,11 +256,13 @@ section.avatars.clearfix {
 	}
 }
 
-.categeory-list tbody {
+.categeory-list { 
+	tbody {
 	 background: $secondary;
 	 tr:first-of-type {
 		 border-top: none;
 	 }
+	}	
 }
 
 td.main-link {
@@ -356,8 +399,7 @@ img.avatar {
 	background: $secondary;
 	border-radius: 0 5px 5px 0;
 	box-shadow: 2px 2px 8px rgba(0, 0, 0, .12);
-	border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
-	border-color: $secondary;
+	border: 1px solid dark-light-diff($secondary, $primary) !important;
 }
 
 // header
@@ -482,7 +524,8 @@ img.avatar {
 // search
 
 .search-advanced .search-advanced-options {
-	border-color: dark-light-diff($primary, $secondary, 90%, -65%);
+	border-color: ark-light-diff($primary, $secondary, 50%, -70%);
+	border-radius: 0 0 5px 5px;
 	border-top: none;
 }
 .search-advanced-btn {
