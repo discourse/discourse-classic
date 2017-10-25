@@ -133,6 +133,12 @@ body {
 		margin-left: 0;
 		height: 42px;
 	}
+	.post-retort {
+		float: none;
+		&:first-of-type {
+			margin-left: 11px;
+		}
+	}
 }
 .embedded-posts {
 	padding: 20px 0;
