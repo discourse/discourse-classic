@@ -313,7 +313,7 @@ td.main-link {
 		a.title {
 			color: $tertiary;
 			&:visited {
-				opacity: .6;
+				color: dark-light-diff($tertiary, $secondary, 50%, -45%);
 			}
 		}
 	}
