@@ -119,6 +119,12 @@ body {
 				}
 			}
 		}
+		button.widget-button.btn-flat.accepted.fade-out.no-text.btn-icon {
+			border-left: none;
+		}
+	}
+	span.accepted-text {
+		line-height: 42px;
 	}
 	nav.post-controls button.bookmark {
 		padding: 12px;
