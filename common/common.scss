@@ -58,6 +58,15 @@ body {
 	}
 }
 
+#topic-footer-buttons .btn {
+	height: auto;
+}
+
+.presense-users {
+	background: transparent;
+	padding: 0 5px 0 0;
+}
+
 #share-link {
     border-radius: 5px;
 }
@@ -207,12 +216,14 @@ section.avatars.clearfix {
 	border-top: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
 	box-shadow: 0 -2px 5px rgba(0, 0, 0, .07);
 	.d-editor-button-bar {
+		margin: 5px;
 		border-bottom: none;
 		height: 29px;
 	}
 	.btn {
 		min-width: 25px;
 		border-color: dark-light-diff($primary, $secondary, 90%, -65%);
+		margin: 0 2px;
 	}
 	.btn:hover {
 		background: dark-light-diff($primary, $secondary, 60%, -50%);
@@ -616,4 +627,13 @@ button.post-retort {
 	&:first-of-type {
 		margin-left: 11px;
 	}
+}
+
+.header-search-enabled {
+	.d-header .icons>li:first-of-type {
+		border: none;
+	}
+	.d-header .icons>li:nth-of-type(2) {
+		border-radius: 5px 0 0 5px;
+		border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
 }
