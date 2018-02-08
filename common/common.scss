@@ -99,6 +99,7 @@ body {
 	border-top: none;
 }
 .post-actions {
+	margin-bottom: 0px;
 	.post-action {
 		margin-right: 10px;
 		padding-bottom: 10px;
@@ -299,6 +300,13 @@ td.main-link {
     }
 }
 
+.topic-list tr.selected td:first-child, .topic-list-item.selected td:first-child, .topic-post.selected {
+	box-shadow: none;
+	.topic-avatar img {
+		box-shadow: 0 0 0 5px $danger;
+	}
+}
+
 #list-area {
 	.contents {
 		background: $secondary;
@@ -334,9 +342,6 @@ td.main-link {
 			}
 		}
 	}
-}
-.extra-info-wrapper {
-	overflow: visible;
 }
 .nav-pills {
 	margin-left: 10px;
