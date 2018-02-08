@@ -71,6 +71,10 @@ body {
     border-radius: 5px;
 }
 
+.like-count.highlight-action.btn-text {
+	padding: 13px;
+}
+
 .moderator .topic-body:before {
 	border-right: 10px solid dark-light-diff($highlight, $secondary, 70%, -80%);
 }
@@ -163,10 +167,8 @@ body {
 			max-width: 100%;
 			height: auto;
 		}
-		.row .topic-body {
-			.row .topic-avatar, .row .topic-body {
-				 border-top: none;
-			}
+		.row .topic-avatar, .row .topic-body {
+				border-top: none;
 		}
 		@media screen and (max-width: 960px) {
 			width: 90%;
@@ -183,12 +185,9 @@ body {
 	}
 	&.bottom {
 		margin-bottom: 0;
-		.row .topic-body {
-			.row .topic-avatar, .row .topic-body {
-				 border-top: none;
-			}
+		.row .topic-avatar, .row .topic-body {
+				border-top: none;
 		}
-
 	}
 }
 .post-links-container {
@@ -252,6 +251,7 @@ section.avatars.clearfix {
 		button.dropdown-select-box-header {
 			border: none !important;
 			min-width: 0;
+			margin-right: 2px;
 		}
 	}
 }
