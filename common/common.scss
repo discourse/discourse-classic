@@ -666,10 +666,16 @@ button.post-retort {
 }
 
 .header-search-enabled {
-	.d-header .icons>li:first-of-type {
-		border: none;
+	.search-header {
+		.btn.search-icon {
+			margin-left: 5px;
+		}
 	}
-	.d-header .icons>li:nth-of-type(2) {
+	ul.d-header-icons>li:first-of-type {
+		border: none;
+		display: none;
+	}
+	ul.d-header-icons>li:nth-of-type(2) {
 		border-radius: 5px 0 0 5px;
 		border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
 	}
