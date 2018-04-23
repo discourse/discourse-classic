@@ -148,6 +148,7 @@ body {
 		height: 42px;
 	}
 
+	.like-count.highlight-action.btn-text,
 	.toggle-like.like.no-text.btn-icon {
 		padding: 12px;
 	}
@@ -158,6 +159,7 @@ body {
 	}
 
 }
+
 .embedded-posts {
 	padding: 20px 0;
 	background: darken(dark-light-diff($primary, $secondary, 90%, -95%), 10%);
