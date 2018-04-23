@@ -147,6 +147,16 @@ body {
 		margin-left: 0;
 		height: 42px;
 	}
+
+	.toggle-like.like.no-text.btn-icon {
+		padding: 12px;
+	}
+
+	.regular-likes.btn-text + .toggle-like.like.no-text.btn-icon {
+		border-left: none;
+		padding: 12px 12px 12px 5px;
+	}
+
 }
 .embedded-posts {
 	padding: 20px 0;
