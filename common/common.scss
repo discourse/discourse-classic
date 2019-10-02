@@ -277,6 +277,13 @@ section.avatars.clearfix {
     margin: 5px;
     border-bottom: none;
     height: 29px;
+    .btn {
+      @media screen and (max-width: 400px) {
+        min-width: unset;
+        font-size: 0.85em;
+        padding: 0.27em;
+      }
+    }
   }
   .btn {
     min-width: 25px;
@@ -291,6 +298,9 @@ section.avatars.clearfix {
   }
   .d-editor-button-bar .toolbar-popup-menu-options .btn.select-kit-header {
     padding: 0 8px;
+    @media screen and (max-width: 400px) {
+      padding: 0 0.25em;
+    }
     height: 25px;
   }
   .composer-actions {
