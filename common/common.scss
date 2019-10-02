@@ -839,3 +839,8 @@ button.post-retort {
     max-width: unset;
   }
 }
+
+.lightbox-wrapper,
+.lightbox-wrapper * {
+  max-width: 100%;
+}
