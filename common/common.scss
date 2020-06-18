@@ -131,7 +131,7 @@ body {
   transition: opacity 0.7s;
   .actions {
     button {
-      padding: 12px;
+      padding: 12px !important;
       border-left: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
       margin: 0;
       &.reply {
@@ -322,8 +322,13 @@ section.avatars.clearfix {
 }
 
 .popup-menu {
+  background: transparent;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  border: none;
+  .btn {
+    background: $secondary;
+    margin-bottom: 0.2em;
+  }
 }
 
 .modal-inner-container {
@@ -509,7 +514,8 @@ td.main-link {
   }
 }
 
-ol.category-breadcrumb li.category-drop {
+ol.category-breadcrumb li.category-drop,
+ol.category-breadcrumb li.tag-drop {
   margin-right: 0;
   box-shadow: inset 0 1px 2px rgba($secondary, 0.25),
     inset 0 -1px 2px rgba($primary, 0.25);
@@ -633,11 +639,9 @@ img.avatar {
   .about {
     &.has-background {
       .details {
-        background: rgba(lighten($primary, 80%), 0.85) !important;
         padding-bottom: 10px;
       }
       .secondary {
-        background: rgba(lighten($primary, 80%), 1);
         margin: 0px;
       }
     }
@@ -650,7 +654,6 @@ img.avatar {
       width: auto;
     }
     .bio {
-      padding: 10px;
       p {
         padding: 5px 10px;
         &:first-of-type {
@@ -666,9 +669,6 @@ img.avatar {
           }
         }
       }
-      background: $secondary;
-      border-radius: 5px;
-      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
     }
     .secondary {
       background: transparent;
@@ -687,6 +687,15 @@ img.avatar {
   .nav-stacked.activity-list {
     padding-top: 0;
   }
+}
+
+.user-content {
+  background: transparent;
+}
+
+.user-stream .item,
+.user-stream .user-stream-item {
+  background: transparent;
 }
 
 .nav-pills.user-nav {
@@ -749,7 +758,8 @@ img.avatar {
 }
 
 .groups-table,
-.group-details-container {
+.group-details-container,
+.group-box {
   background: $secondary;
   border-radius: 5px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
@@ -853,4 +863,9 @@ button.post-retort {
 .lightbox-wrapper,
 .lightbox-wrapper * {
   max-width: 100%;
+}
+
+.btn-flat.modal-close {
+  border: none !important;
+  box-shadow: none;
 }
