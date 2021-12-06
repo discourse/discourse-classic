@@ -297,11 +297,10 @@ section.avatars.clearfix {
     background: dark-light-diff($primary, $secondary, 60%, -50%);
   }
   .d-editor-button-bar .toolbar-popup-menu-options .btn.select-kit-header {
-    padding: 0 8px;
+    padding: 0.5em 0.65em;
     @media screen and (max-width: 400px) {
-      padding: 0 0.25em;
+      padding: 0.5em 0.25em;
     }
-    height: 25px;
   }
   .composer-actions {
     button.dropdown-select-box-header {
