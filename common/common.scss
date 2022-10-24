@@ -78,10 +78,6 @@ body {
   border-radius: 5px;
 }
 
-.like-count.highlight-action.btn-text {
-  padding: 13px;
-}
-
 .moderator .topic-body:before {
   border-right: 10px solid dark-light-diff($highlight, $secondary, 70%, -80%);
 }
@@ -184,6 +180,10 @@ body {
   }
 }
 
+nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
+  padding-right: 0 !important; // ovverrides another important
+}
+
 .embedded-posts {
   padding: 20px 0;
   background: darken(dark-light-diff($primary, $secondary, 90%, -95%), 10%);
@@ -194,7 +194,7 @@ body {
   }
   &.top {
     margin-left: 75px;
-    width: 690px;
+    width: 710px;
     padding-top: 15px !important;
     padding-bottom: 15px !important;
     margin-bottom: 0 !important;
@@ -222,6 +222,7 @@ body {
   }
   &.bottom {
     margin-bottom: 0;
+    margin-left: 0;
     .row .topic-avatar,
     .row .topic-body {
       border-top: none;
@@ -412,7 +413,6 @@ td.main-link {
     background: $secondary;
     border-radius: 5px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
-    border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
     .topic-list-item {
       border: none;
       &:nth-child(2n) {
@@ -605,6 +605,23 @@ img.avatar {
   border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+}
+
+.user-menu.revamped {
+  .menu-tabs-container {
+    border: none;
+  }
+
+  .tabs-list .btn {
+    margin-right: 0.25em;
+    margin-bottom: 0.33em;
+    padding: 0.85em 0.95em;
+  }
+}
+
+.user-menu.revamped #quick-access-profile .profile-tab-btn {
+  border: none !important; // overrides another important
+  box-shadow: none;
 }
 
 .card-content {
