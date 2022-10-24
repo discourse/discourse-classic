@@ -1,9 +1,21 @@
-.sidebar-wrapper {
+.btn.btn-sidebar-toggle:not(.bulk-select, .sidebar-section-header) {
+  border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%) !important; // overrides another important
+  box-shadow: none;
+  &:hover,
+  &:focus {
+    .d-icon {
+      color: var(--primary-medium);
+    }
+  }
+}
+
+.has-sidebar-page .sidebar-wrapper {
   background: var(--secondary);
   border-radius: 5px;
   box-shadow: 2px 2px 8px rgba(var(--primary-rgb), 0.12);
-  border: 1px solid var(--primary-300);
-  margin-block: 2.4em;
+  margin-top: 1.5em;
+  top: calc(var(--header-offset) + 1.5em);
+  height: calc(100vh - (var(--header-offset, 0) + 3em));
 
   .sidebar-section-wrapper
     .sidebar-section-header-wrapper

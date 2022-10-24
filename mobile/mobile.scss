@@ -1,201 +1,199 @@
+/* topic list */
+
+.topic-list .topic-list-data {
+  padding: 0.5em;
+}
+
 /* topic */
 
-.topic-list th, .topic-list td {
-    padding-left: 5px;
+.topic-list th,
+.topic-list td {
+  padding-left: 5px;
 }
 
 .topic-body {
-    width: 100% !important;
-    margin-left: 0;
-    &:before {
-        display: none;
-    }
+  width: 100% !important;
+  margin-left: 0;
+  &:before {
+    display: none;
+  }
 }
 
 #topic-title {
-    padding: 10px 0;
+  padding: 10px 0;
 }
 
 .topic-meta-data {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .topic-avatar {
-    margin-top: 10px;
-    margin-left: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .topic-map {
-    margin-bottom: 0;
-    border-radius: 0 0 5px 5px;
-}
-
-.menu-panel.slide-in {
-    top: 49px !important;
+  margin-bottom: 0;
+  border-radius: 0 0 5px 5px;
 }
 
 .who-liked {
-    margin-left: 0;
-    padding-left: 10px;
+  margin-left: 0;
+  padding-left: 10px;
 }
 
 .post-actions {
-    .post-action {
-        padding-top: 10px;
-    }
+  .post-action {
+    padding-top: 10px;
+  }
 }
 
 span.topic-post-badges {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
-.small-action { 
+.small-action {
+  padding: 0;
+  .small-action-desc {
     padding: 0;
-    .small-action-desc {
-        padding: 0;
-        button {
-            padding: 4px 8px;
-        }
+    button {
+      padding: 4px 8px;
     }
-    .topic-avatar {
-        display: none;
-    }
+  }
+  .topic-avatar {
+    display: none;
+  }
 }
 
 .toggle-summary {
-    button.widget-button.btn.btn.btn-primary.btn-text {
-        background: $tertiary;
-        color: $secondary;
-    }
+  button.widget-button.btn.btn.btn-primary.btn-text {
+    background: $tertiary;
+    color: $secondary;
+  }
 }
 .link-summary {
-    button.widget-button.btn.btn.no-text.btn-icon {
-        border: none !important;
-    }
+  button.widget-button.btn.btn.no-text.btn-icon {
+    border: none !important;
+  }
 }
-
 
 /* profile */
 
 .user-main {
-
   .user-right {
-      padding-left: 0;
+    padding-left: 0;
   }
 
   .about {
     .details .primary .bio {
+      padding: 0;
+      box-shadow: none;
+      p {
         padding: 0;
-        box-shadow: none;
-        p {
-            padding: 0;
-        }
+      }
     }
     .bio p:first-of-type:before {
-        display: none;
+      display: none;
     }
     .secondary dl dd {
-        margin: 0;
+      margin: 0;
     }
   }
 
   section.controls {
-      float: right;
+    float: right;
   }
-
-}
-
-.secondary,
-.user-main .about .details,
-.user-main .about .collapsed-info .details,
-.user-main .about {
-    background: $secondary;
 }
 
 .user-preferences .control-group {
-    padding: 0;
+  padding: 0;
+}
+
+.user-main .user-content {
+  background: transparent;
 }
 
 .stats-section li.linked-stat a {
-    color: $tertiary;
+  color: $tertiary;
 }
 
 span.btn-group.notification-options {
-    padding: 20px 0;
-    margin-top: 20px;
-    border-top: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
-    border-bottom: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+  padding: 20px 0;
+  margin-top: 20px;
+  border-top: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+  border-bottom: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
 }
 
 #suggested-topics {
-    table.topic-list {
-        background: $secondary;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,.07);
+  table.topic-list {
+    background: $secondary;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
 
-        &>tbody>tr:first-of-type {
-            border-top: none;
-        }
+    & > tbody > tr:first-of-type {
+      border-top: none;
     }
+  }
 }
 
 .post-menu-area nav.post-controls button.bookmark {
-    padding: 8px 10px;
+  padding: 8px 10px;
 }
 
 #topic-progress-wrapper .topic-admin-menu-button-container {
-    right: 48px;
+  right: 48px;
 }
 
 /* search */
 
 .search-title {
-    padding: 0;
-    .sort-by {
-        float: left;
-        }
+  padding: 0;
+  .sort-by {
+    float: left;
+  }
 }
 
 button.search-advanced-btn.btn {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .bulk-select.btn {
-    border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+  border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
 }
 
 .search-advanced .search-advanced-options {
-    border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
-    border-top: none;
+  border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+  border-top: none;
 }
 
 .fps-select {
-    margin: 20px 0;
-    a {
-        padding-left: 0;
-    }
+  margin: 20px 0;
+  a {
+    padding-left: 0;
+  }
 }
 
 .gap {
-    padding-left: 0;
+  padding-left: 0;
 }
 
-
-.list-controls .nav-pills>li {
-    border-radius: 5px;
+.list-controls .nav-pills > li {
+  border-radius: 5px;
+  border: none;
 }
 
 .nav-pills {
-    margin-left: 0;
+  margin-left: 0;
 }
 
-.nav-pills>li>a {
-    border-radius: 5px;
-    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
-    box-shadow: inset 0 1px 2px rgba($secondary, .5), inset 0 -1px 2px rgba($primary, .25);
+.nav-pills > li > a {
+  border-radius: 5px;
+  border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
+  box-shadow: inset 0 1px 2px rgba($secondary, 0.5),
+    inset 0 -1px 2px rgba($primary, 0.25);
 }
 
 button.post-retort {
-	margin-bottom: 10px;	
+  margin-bottom: 10px;
 }
