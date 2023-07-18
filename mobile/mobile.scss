@@ -67,8 +67,8 @@ span.topic-post-badges {
 
 .toggle-summary {
   button.widget-button.btn.btn.btn-primary.btn-text {
-    background: $tertiary;
-    color: $secondary;
+    background: var(--tertiary);
+    color: var(--secondary);
   }
 }
 .link-summary {
@@ -114,19 +114,19 @@ span.topic-post-badges {
 }
 
 .stats-section li.linked-stat a {
-  color: $tertiary;
+  color: var(--tertiary);
 }
 
 span.btn-group.notification-options {
   padding: 20px 0;
   margin-top: 20px;
-  border-top: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
-  border-bottom: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+  border-top: 1px solid var(--primary-medium);
+  border-bottom: 1px solid var(--primary-medium);
 }
 
 #suggested-topics {
   table.topic-list {
-    background: $secondary;
+    background: var(--secondary);
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
@@ -159,11 +159,11 @@ button.search-advanced-btn.btn {
 }
 
 .bulk-select.btn {
-  border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+  border: 1px solid var(--primary-medium);
 }
 
 .search-advanced .search-advanced-options {
-  border: 1px solid dark-light-diff($secondary, $primary, 50%, -50%);
+  border: 1px solid var(--primary-medium);
   border-top: none;
 }
 
@@ -189,9 +189,9 @@ button.search-advanced-btn.btn {
 
 .nav-pills > li > a {
   border-radius: 5px;
-  border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
-  box-shadow: inset 0 1px 2px rgba($secondary, 0.5),
-    inset 0 -1px 2px rgba($primary, 0.25);
+  border: 1px solid var(--primary-high) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
 }
 
 button.post-retort {
