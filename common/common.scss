@@ -1,32 +1,12 @@
-//color functions
-@function brightness($color) {
-  @return (
-    (red($color) * 0.299) + (green($color) * 0.587) + (blue($color) * 0.114)
-  );
-}
-
-@function dark-light-diff(
-  $adjusted-color,
-  $comparison-color,
-  $lightness,
-  $darkness
-) {
-  @if brightness($adjusted-color) < brightness($comparison-color) {
-    @return scale-color($adjusted-color, $lightness: $lightness);
-  } @else {
-    @return scale-color($adjusted-color, $lightness: $darkness);
-  }
-}
-
 @import "sidebar";
 
 body {
-  background: dark-light-diff($primary, $secondary, 90%, -95%);
+  background: var(--primary-low);
 }
 
 //topic
 .topic-body {
-  background: $secondary;
+  background: var(--secondary);
   border-radius: 5px;
   margin-bottom: 15px;
   padding: 0;
@@ -51,7 +31,7 @@ body {
     top: 27px;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid $secondary;
+    border-right: 10px solid var(--secondary);
   }
   .topic-meta-data {
     padding: 10px;
@@ -79,11 +59,11 @@ body {
 }
 
 .moderator .topic-body:before {
-  border-right: 10px solid dark-light-diff($highlight, $secondary, 70%, -80%);
+  border-right: 10px solid var(--highlight);
 }
 
 .deleted .topic-body:before {
-  border-right: 10px solid dark-light-diff($danger, $secondary, 60%, -60%);
+  border-right: 10px solid var(--danger);
 }
 
 .topic-map {
@@ -124,25 +104,25 @@ body {
 
 .post-menu-area {
   margin-bottom: 0;
-  border-top: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+  border-top: 1px solid var(--primary-low);
   opacity: 0.3;
   transition: opacity 0.7s;
   .actions {
     button {
       padding: 12px !important;
-      border-left: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+      border-left: 1px solid var(--secondary);
       margin: 0;
       &.reply {
         margin-left: 0;
-        background: dark-light-diff($tertiary, $secondary, 85%, -65%);
-        color: $tertiary;
+        background: var(--tertiary-low);
+        color: var(--tertiary);
         border-radius: 0 0 5px 0;
         .topic-owner & {
           border-radius: 0;
         }
         &:hover {
-          background: dark-light-diff($tertiary, $secondary, 85%, -65%);
-          color: $tertiary;
+          background: var(--tertiary);
+          color: var(--secondary);
         }
       }
     }
@@ -186,7 +166,9 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
 
 .embedded-posts {
   padding: 20px 0;
-  background: darken(dark-light-diff($primary, $secondary, 90%, -95%), 10%);
+  background: var(--primary-300);
+  border: none;
+
   .topic-body {
     overflow: visible;
     width: calc(100% - 120px);
@@ -197,7 +179,7 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
     width: 710px;
     padding-top: 15px !important;
     padding-bottom: 15px !important;
-    margin-bottom: 0 !important;
+    margin-bottom: -10px !important;
     border-radius: 5px 5px 0 0;
     .topic-body .cooked img:not(.thumbnail) {
       max-width: 100%;
@@ -244,26 +226,25 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
 }
 
 .badge-wrapper.box {
-  text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -70%);
+  text-shadow: 0 1px var(--primary);
   margin-top: 0;
   .badge-category-bg {
     border-radius: 5px;
-    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%);
-    box-shadow: inset 0 1px 0 rgba($secondary, 0.25);
+    border: 1px solid var(--primary);
+    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25);
   }
 }
 
 .timeline-container .topic-timeline {
   .timeline-handle {
-    background: dark-light-diff($primary, $secondary, 50%, -20%);
+    background: var(--tertiary);
   }
   .timeline-scrollarea {
-    border-color: dark-light-diff($primary, $secondary, 50%, -20%);
+    border-color: var(--primary-medium);
   }
 }
 
 .who-liked {
-  border-top: 1px solid scale-color($primary, $lightness: 90%);
   margin-top: 0;
   padding-top: 10px;
   width: 98%;
@@ -274,13 +255,16 @@ section.avatars.clearfix {
 }
 
 #reply-control {
-  border-top: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.07);
+  background: var(--primary-low);
   .d-editor-button-bar {
     margin: 5px;
     border-bottom: none;
     height: 29px;
     .btn {
+      min-width: 25px;
+      height: 32px;
+      border-color: var(--primary-high);
+      margin: 0 2px;
       @media screen and (max-width: 400px) {
         min-width: unset;
         font-size: 0.85em;
@@ -288,16 +272,16 @@ section.avatars.clearfix {
       }
     }
   }
-  .btn {
-    min-width: 25px;
-    border-color: dark-light-diff($primary, $secondary, 90%, -65%);
-    margin: 0 2px;
+
+  .btn-mini-toggle {
+    color: var(--primary-medium);
   }
+
   .btn:hover {
     .d-icon {
-      color: $secondary;
+      color: var(--secondary);
     }
-    background: dark-light-diff($primary, $secondary, 60%, -50%);
+    background: var(--primary-medium);
   }
   .d-editor-button-bar .toolbar-popup-menu-options .btn.select-kit-header {
     padding: 0.5em 0.65em;
@@ -316,10 +300,10 @@ section.avatars.clearfix {
 
 @keyframes background-fade-highlight {
   0% {
-    background-color: dark-light-diff($tertiary, $secondary, 85%, -65%);
+    background-color: var(--tertiary-low);
   }
   100% {
-    background-color: $secondary;
+    background-color: var(--secondary);
   }
 }
 
@@ -328,7 +312,7 @@ section.avatars.clearfix {
   border-radius: 5px;
   border: none;
   .btn {
-    background: $secondary;
+    background: var(--secondary);
     margin-bottom: 0.2em;
   }
 }
@@ -337,15 +321,30 @@ section.avatars.clearfix {
   border-radius: 5px;
 }
 
-.small-action .small-action-desc,
-.small-action .topic-avatar i {
-  color: scale-color($primary, $lightness: 25%);
-}
+.small-action {
+  .topic-avatar {
+    padding-left: 3px;
+  }
+  .topic-avatar .d-icon {
+    color: var(--primary-medium);
+  }
+  .small-action-desc {
+    color: var(--primary-high);
+  }
+  .small-action-desc {
+    @media screen and (min-width: 756px) {
+      width: 100%;
+      max-width: 740px;
+    }
+    padding-left: 30px;
+    button {
+      margin-left: 5px;
+    }
+  }
 
-.small-action .small-action-desc {
-  padding-left: 25px;
-  button {
-    margin-left: 5px;
+  .mention,
+  .mention-group {
+    background: var(--primary-300);
   }
 }
 
@@ -358,6 +357,15 @@ section.avatars.clearfix {
   right: 2px;
 }
 
+.post-admin-menu {
+  padding: 0.5em;
+}
+
+.post-admin-menu,
+.topic-admin-popup-menu {
+  background: var(--secondary);
+}
+
 #topic-progress-wrapper .topic-admin-menu-button-container {
   right: 50px;
 }
@@ -365,13 +373,17 @@ section.avatars.clearfix {
 // topic list
 .topic-list-latest tr {
   &:nth-child(2n) {
-    background: dark-light-diff($primary, $secondary, 95%, -90%);
+    background: var(--primary-high);
   }
+}
+
+.topic-list .badge-notification.new-topic {
+  color: transparent;
 }
 
 .categeory-list {
   tbody {
-    background: $secondary;
+    background: var(--secondary);
     tr:first-of-type {
       border-top: none;
     }
@@ -386,7 +398,7 @@ td.main-link {
 
 #suggested-topics {
   .topic-list {
-    background: $secondary;
+    background: var(--secondary);
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
   }
@@ -404,25 +416,25 @@ td.main-link {
 .topic-post.selected {
   box-shadow: none;
   .topic-avatar img {
-    box-shadow: 0 0 0 5px $danger;
+    box-shadow: 0 0 0 5px var(--danger);
   }
 }
 
 #list-area {
   .contents {
-    background: $secondary;
+    background: var(--secondary);
     border-radius: 5px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
     .topic-list-item {
       border: none;
       &:nth-child(2n) {
-        background: dark-light-diff($primary, $secondary, 95%, -90%);
+        background: var(--primary-very-low);
       }
     }
     .topic-list thead {
-      border-bottom: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+      border-bottom: 1px solid var(--secondary);
       th {
-        background: dark-light-diff($primary, $secondary, 95%, -90%);
+        background: var(--primary-very-low);
         font-weight: bold;
         &:first-of-type {
           border-radius: 5px 0 0 0;
@@ -433,12 +445,12 @@ td.main-link {
       }
     }
     .topic-list th {
-      color: scale-color($primary, $lightness: 40%);
+      color: var(--primary-medium);
     }
     a.title {
-      color: $tertiary;
+      color: var(--tertiary);
       &:visited {
-        color: dark-light-diff($tertiary, $secondary, 40%, -30%);
+        color: var(--tertiary-700);
       }
     }
   }
@@ -451,21 +463,26 @@ td.main-link {
 .nav-pills > li.active > a,
 .nav-pills > li > a.active {
   border-radius: 5px;
-  text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -70%);
-  box-shadow: inset 0 1px 2px rgba($secondary, 0.25),
-    inset 0 -1px 2px rgba($primary, 0.25);
-  border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%);
+  text-shadow: 0 1px var(--primary-low-mid);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--primary-medium);
 }
 
 .nav-pills > li > a:hover {
   border-radius: 5px;
 }
 
-.btn:not(.bulk-select, .sidebar-section-header) {
+.btn:not(
+    .bulk-select,
+    .sidebar-section-header,
+    .close,
+    .period-chooser-header
+  ) {
   border-radius: 5px;
-  border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
-  box-shadow: inset 0 1px 2px rgba($secondary, 0.5),
-    inset 0 -1px 2px rgba($primary, 0.25);
+  border: 1px solid var(--primary-500) !important;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .list-controls {
@@ -498,13 +515,13 @@ td.main-link {
       border-radius: 0 5px 5px 0;
     }
     a.badge-category:not(.home) {
-      text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -20%);
+      text-shadow: 0 1px var(--primary-medium);
     }
     .has-drop.box {
       a.badge-category {
         border-radius: 4px 0 0 4px !important;
-        box-shadow: inset 0 1px 0 rgba($secondary, 0.25),
-          inset 0 -1px 0 rgba($primary, 0.25);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.25);
         &.category-dropdown-button {
           border-radius: 0 4px 4px 0 !important;
         }
@@ -515,24 +532,24 @@ td.main-link {
 
 ol.category-breadcrumb li div.combo-box-header {
   border-radius: 5px;
-  border: 1px solid dark-light-diff($primary, $secondary, 50%, -60%);
-  box-shadow: inset 0 1px 2px rgba($secondary, 0.25),
-    inset 0 -1px 2px rgba($primary, 0.25);
+  border: 1px solid var(--primary-medium);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
 }
 
 .btn-default,
 .btn-primary {
-  background: $tertiary;
-  color: $secondary;
+  background: var(--tertiary);
+  color: var(--secondary);
   border-radius: 5px;
-  text-shadow: 0 1px dark-light-diff($primary, $secondary, 50%, -20%);
-  box-shadow: inset 0 2px 10px rgba($secondary, 0.25);
-  border: 1px solid dark-light-diff($primary, $secondary, 50%, -20%);
+  text-shadow: 0 1px var(--primary-low-mid);
+  box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--primary-700);
   &[href] {
-    color: $secondary;
+    color: var(--secondary);
   }
   &:hover {
-    background: scale-color($tertiary, $lightness: -20%);
+    background: var(--tertiary-high);
   }
 }
 
@@ -541,7 +558,8 @@ ol.category-breadcrumb li div.combo-box-header {
   color: currentColor;
 }
 
-nav.post-controls button.create {
+nav.post-controls .actions button.create {
+  color: var(--tertiary);
   .d-icon {
     color: currentColor;
   }
@@ -555,9 +573,9 @@ nav.post-controls button.create {
 .list-controls {
   .btn.no-text.btn-icon {
     border-radius: 5px;
-    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%) !important;
-    box-shadow: inset 0 1px 2px rgba($secondary, 0.5),
-      inset 0 -1px 2px rgba($primary, 0.25);
+    border: 1px solid var(--primary-medium) !important;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5),
+      inset 0 -1px 2px rgba(0, 0, 0, 0.25);
   }
 }
 
@@ -566,25 +584,31 @@ img.avatar {
 }
 
 .category-box-inner {
-  background: $secondary;
+  background: var(--secondary);
   border-radius: 0 5px 5px 0;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
-  border: 1px solid $secondary !important;
+  border: 1px solid var(--secondary) !important;
 }
 
 // header
 .d-header {
   .icons > li {
     &:first-of-type {
-      border-left: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+      border-left: 1px solid var(--primary-low-mid);
       border-radius: 5px 0 0 5px;
+      button {
+        border-radius: 5px 0 0 5px;
+      }
     }
     &:last-of-type {
       border-radius: 0 5px 5px 0;
+      button {
+        border-radius: 0 5px 5px 0;
+      }
     }
-    border-right: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
-    border-top: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
-    border-bottom: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+    border-right: 1px solid var(--primary-low-mid);
+    border-top: 1px solid var(--primary-low-mid);
+    border-bottom: 1px solid var(--primary-low-mid);
     &.active {
       border-bottom: none;
       border-bottom-right-radius: 0;
@@ -592,17 +616,20 @@ img.avatar {
     }
   }
   .icons .icon {
-    color: dark-light-diff($secondary, $primary, 50%, -50%);
+    color: var(--primary-medium);
   }
   .drop-down-visible .d-header-icons .active .icon {
     background: transparent;
     border-top: none;
   }
+  .bootstrap-mode {
+    color: var(--secondary);
+  }
 }
 
 .menu-panel {
   margin-top: -1px;
-  border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+  border: 1px solid var(--primary-low-mid);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
 }
@@ -610,12 +637,18 @@ img.avatar {
 .user-menu.revamped {
   .menu-tabs-container {
     border: none;
+    padding: 0.5em 0;
   }
 
   .tabs-list .btn {
     margin-right: 0.25em;
     margin-bottom: 0.33em;
-    padding: 0.85em 0.95em;
+    padding: 0.55em 0.75em;
+    &.active {
+      .d-icon {
+        color: var(--primary-high);
+      }
+    }
   }
 }
 
@@ -633,25 +666,29 @@ img.avatar {
   padding: 10px;
 }
 
-// user profile
-.user-table {
+// userm group directories, and static pages
+
+.user-content-wrapper,
+.users-directory,
+.body-page {
   box-sizing: border-box;
-  background: $secondary;
+  background: var(--secondary);
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   padding: 20px;
-  border: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
-  margin-top: 20px;
-  .stats-section ul {
-    border-top: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
-    border-bottom: 1px solid dark-light-diff($primary, $secondary, 90%, -65%);
-    li {
-      margin: 0;
-    }
-  }
+  border: 1px solid var(--primary-low);
 }
 
+// user profile
+
 .user-main {
+  box-sizing: border-box;
+  background: var(--secondary);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  padding: 20px;
+  border: 1px solid var(--primary-low);
+  margin-top: 20px;
   .about {
     &.has-background {
       .details {
@@ -680,7 +717,7 @@ img.avatar {
             margin-top: 10px;
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-right: 10px solid $secondary;
+            border-right: 10px solid var(--secondary);
             z-index: 9;
           }
         }
@@ -688,8 +725,8 @@ img.avatar {
     }
     .secondary {
       background: transparent;
-      border-top: 1px solid dark-light-diff($primary, $secondary, 75%, -65%);
-      border-bottom: 1px solid dark-light-diff($primary, $secondary, 75%, -65%);
+      border-top: 1px solid var(--primary-low-mid);
+      border-bottom: 1px solid var(--primary-low-mid);
       margin: 10px 0;
     }
   }
@@ -719,20 +756,41 @@ img.avatar {
 }
 
 // search
-.search-advanced .search-advanced-options {
-  border-color: dark-light-diff($primary, $secondary, 50%, -70%);
-  border-radius: 0 0 5px 5px;
-  border-top: none;
+
+.search-container {
+  .search-header,
+  .search-filters,
+  .search-bar {
+    background: var(--primary-low);
+  }
+
+  .search-filters .search-advanced-filters,
+  .search-advanced-options,
+  .search-advanced .search-info,
+  .search-advanced-additional-options {
+    background: transparent;
+  }
+
+  .search-filters {
+    margin-top: 1em;
+    background: var(--secondary);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+    details.advanced-filters {
+      margin-top: 0;
+    }
+  }
 }
 
 .search-container .search-advanced-sidebar {
   .search-advanced-title {
     border-radius: 5px 5px 0 0;
-    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%);
+    border: 1px solid var(--primary-medium);
   }
   .search-advanced-filters {
     border-radius: 0 0 5px 5px;
-    border: 1px solid dark-light-diff($primary, $secondary, 50%, -70%);
+    border: 1px solid var(--primary-medium);
     border-top: none;
   }
 }
@@ -746,7 +804,7 @@ img.avatar {
 }
 
 .fps-result {
-  background: $secondary;
+  background: var(--secondary);
   padding: 10px;
   border-radius: 5px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
@@ -754,7 +812,7 @@ img.avatar {
 
 // badges
 .badge-card {
-  background: $secondary;
+  background: var(--secondary);
   border-radius: 5px;
   .badge-contents .badge-icon {
     border-radius: 5px 0 0 5px;
@@ -776,7 +834,7 @@ img.avatar {
 .groups-table,
 .group-details-container,
 .group-box {
-  background: $secondary;
+  background: var(--secondary);
   border-radius: 5px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
 }
@@ -786,7 +844,7 @@ img.avatar {
 }
 
 .list-controls .group-nav .combo-box .combo-box-header {
-  border: 1px solid dark-light-diff($primary, $secondary, 50%, -20%);
+  border: 1px solid var(--primary-medium);
   border-radius: 5px;
 }
 
@@ -803,22 +861,22 @@ img.avatar {
 
 .alert.alert-info {
   border-radius: 5px;
-  border: 1px solid $tertiary;
+  border: 1px solid var(--tertiary);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.07);
 }
 
 .popup-tip {
   border-radius: 5px;
-  border: 1px solid $danger;
+  border: 1px solid var(--danger);
 }
 
 .composer-popup {
   border-radius: 5px;
-  border: 1px solid darken($highlight, 20%);
+  border: 1px solid var(--highlight-low);
 }
 
 .select-kit.dropdown-select-box.period-chooser .period-chooser-header {
-  padding: 5px;
+  border: none;
 }
 
 .select-kit.dropdown-select-box.period-chooser
@@ -851,7 +909,7 @@ button.post-retort {
   }
   ul.d-header-icons > li:nth-of-type(2) {
     border-radius: 5px 0 0 5px;
-    border: 1px solid dark-light-diff($secondary, $primary, 20%, -20%);
+    border: 1px solid var(--primary-low);
   }
 }
 
