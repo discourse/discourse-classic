@@ -1,0 +1,13 @@
+$tertiary-shadow: dark-light-choose(
+  darken($tertiary, 10%),
+  lighten($tertiary, 5%)
+);
+$quaternary-shadow: dark-light-choose(
+  darken($quaternary, 10%),
+  lighten($quaternary, 5%)
+);
+
+:root {
+  --tertiary-shadow: #{$tertiary-shadow};
+  --quaternary-shadow: #{$quaternary-shadow};
+}
