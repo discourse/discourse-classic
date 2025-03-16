@@ -1,3 +1,5 @@
+/* stylelint-disable scss/no-global-function-names */
+
 $tertiary-shadow: dark-light-choose(
   darken($tertiary, 10%),
   lighten($tertiary, 5%)
