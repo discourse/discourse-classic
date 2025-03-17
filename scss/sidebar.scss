@@ -2,9 +2,11 @@
   border: 1px solid var(--primary-medium) !important; // overrides another important
   box-shadow: none;
   color: var(--header_primary-low-mid);
+
   .d-icon {
-    color: currentColor;
+    color: currentcolor;
   }
+
   &:hover,
   &:focus {
     .d-icon {
@@ -26,7 +28,8 @@
     .sidebar-section-header-button {
     border-radius: 5px;
     border: 1px solid var(--primary-500);
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    box-shadow:
+      inset 0 1px 2px rgba(255, 255, 255, 0.5),
       inset 0 -1px 2px rgba(0, 0, 0, 0.25);
   }
 }
@@ -43,11 +46,14 @@
   display: flex;
   align-items: stretch;
   gap: 0.25em;
+
   button.btn {
     color: var(--primary-medium);
+
     .d-icon {
-      color: currentColor;
+      color: currentcolor;
     }
+
     .discourse-no-touch & {
       &:hover {
         .d-icon {

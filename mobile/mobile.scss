@@ -1,11 +1,9 @@
 /* topic list */
-
 .topic-list .topic-list-data {
   padding: 0.5em;
 }
 
 /* topic */
-
 .topic-list th,
 .topic-list td {
   padding-left: 5px;
@@ -14,7 +12,8 @@
 .topic-body {
   width: 100% !important;
   margin-left: 0;
-  &:before {
+
+  &::before {
     display: none;
   }
 }
@@ -54,12 +53,15 @@ span.topic-post-badges {
 
 .small-action {
   padding: 0;
+
   .small-action-desc {
     padding: 0;
+
     button {
       padding: 4px 8px;
     }
   }
+
   .topic-avatar {
     display: none;
   }
@@ -71,6 +73,7 @@ span.topic-post-badges {
     color: var(--secondary);
   }
 }
+
 .link-summary {
   button.widget-button.btn.btn.no-text.btn-icon {
     border: none !important;
@@ -78,7 +81,6 @@ span.topic-post-badges {
 }
 
 /* profile */
-
 .user-main {
   .user-right {
     padding-left: 0;
@@ -88,13 +90,16 @@ span.topic-post-badges {
     .details .primary .bio {
       padding: 0;
       box-shadow: none;
+
       p {
         padding: 0;
       }
     }
-    .bio p:first-of-type:before {
+
+    .bio p:first-of-type::before {
       display: none;
     }
+
     .secondary dl dd {
       margin: 0;
     }
@@ -146,9 +151,9 @@ span.btn-group.notification-options {
 }
 
 /* search */
-
 .search-title {
   padding: 0;
+
   .sort-by {
     float: left;
   }
@@ -169,6 +174,7 @@ button.search-advanced-btn.btn {
 
 .fps-select {
   margin: 20px 0;
+
   a {
     padding-left: 0;
   }
@@ -190,7 +196,8 @@ button.search-advanced-btn.btn {
 .nav-pills > li > a {
   border-radius: 5px;
   border: 1px solid var(--primary-high) !important;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5),
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
     inset 0 -1px 2px rgba(0, 0, 0, 0.25);
 }
 
