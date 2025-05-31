@@ -11,14 +11,14 @@ body {
   margin-bottom: 15px;
   padding: 0;
   border-top: none;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
   margin-left: 30px;
 
-  @media screen and (max-width: 924px) {
+  @media screen and (width <= 924px) {
     width: 90%;
   }
 
-  @media screen and (max-width: 770px) {
+  @media screen and (width <= 770px) {
     width: 85%;
   }
 
@@ -224,11 +224,11 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
       border-top: none;
     }
 
-    @media screen and (max-width: 960px) {
+    @media screen and (width <= 960px) {
       width: 90%;
     }
 
-    @media screen and (max-width: 770px) {
+    @media screen and (width <= 770px) {
       width: 85%;
     }
 
@@ -272,7 +272,7 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
   .badge-category-bg {
     border-radius: 5px;
     border: 1px solid var(--primary);
-    box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0 1px 0 rgb(0, 0, 0, 0.25);
   }
 }
 
@@ -280,8 +280,8 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
   .timeline-handle {
     background: var(--tertiary);
     box-shadow:
-      inset 0 1px 2px rgba(255, 255, 255, 0.5),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+      inset 0 1px 2px rgb(255, 255, 255, 0.5),
+      inset 0 -1px 2px rgb(0, 0, 0, 0.25);
   }
 
   .timeline-scrollarea {
@@ -313,7 +313,7 @@ section.avatars.clearfix {
       border-color: var(--primary-high);
       margin: 0 2px;
 
-      @media screen and (max-width: 400px) {
+      @media screen and (width <= 400px) {
         min-width: unset;
         font-size: 0.85em;
         padding: 0.27em;
@@ -335,7 +335,7 @@ section.avatars.clearfix {
   .d-editor-button-bar .toolbar-popup-menu-options .btn.select-kit-header {
     padding: 0.5em 0.65em;
 
-    @media screen and (max-width: 400px) {
+    @media screen and (width <= 400px) {
       padding: 0.5em 0.25em;
     }
   }
@@ -387,7 +387,7 @@ section.avatars.clearfix {
     color: var(--primary-high);
     padding-left: 30px;
 
-    @media screen and (min-width: 756px) {
+    @media screen and (width >= 756px) {
       width: 100%;
       max-width: 740px;
     }
@@ -456,7 +456,7 @@ td.main-link {
   .topic-list {
     background: var(--secondary);
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 2px 5px rgb(0, 0, 0, 0.07);
   }
 }
 
@@ -481,7 +481,7 @@ td.main-link {
   .contents {
     background: var(--secondary);
     border-radius: 5px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
 
     .topic-list-item {
       border: none;
@@ -531,8 +531,8 @@ td.main-link {
   border-radius: 5px;
   text-shadow: 0 1px var(--quaternary-shadow);
   box-shadow:
-    inset 0 1px 2px rgba(255, 255, 255, 0.25),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+    inset 0 1px 2px rgb(255, 255, 255, 0.25),
+    inset 0 -1px 2px rgb(0, 0, 0, 0.25);
   border: 1px solid var(--quaternary);
 }
 
@@ -551,8 +551,8 @@ td.main-link {
   border-radius: 5px;
   border: 1px solid var(--primary-500);
   box-shadow:
-    inset 0 1px 2px rgba(255, 255, 255, 0.5),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+    inset 0 1px 2px rgb(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgb(0, 0, 0, 0.25);
 }
 
 .user-menu.revamped .bottom-tabs {
@@ -568,8 +568,8 @@ td.main-link {
     border-radius: 5px;
     border: 1px solid var(--primary-medium) !important;
     box-shadow:
-      inset 0 1px 2px rgba(255, 255, 255, 0.5),
-      inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+      inset 0 1px 2px rgb(255, 255, 255, 0.5),
+      inset 0 -1px 2px rgb(0, 0, 0, 0.25);
   }
 
   .category-dropdown-menu {
@@ -617,8 +617,8 @@ td.main-link {
       a.badge-category {
         border-radius: 4px 0 0 4px !important;
         box-shadow:
-          inset 0 1px 0 rgba(255, 255, 255, 0.25),
-          inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+          inset 0 1px 0 rgb(255, 255, 255, 0.25),
+          inset 0 -1px 0 rgb(0, 0, 0, 0.25);
 
         &.category-dropdown-button {
           border-radius: 0 4px 4px 0 !important;
@@ -632,8 +632,8 @@ ol.category-breadcrumb li div.combo-box-header {
   border-radius: 5px;
   border: 1px solid var(--primary-medium);
   box-shadow:
-    inset 0 1px 2px rgba(255, 255, 255, 0.25),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+    inset 0 1px 2px rgb(255, 255, 255, 0.25),
+    inset 0 -1px 2px rgb(0, 0, 0, 0.25);
 }
 
 .btn.btn-default,
@@ -643,8 +643,8 @@ ol.category-breadcrumb li div.combo-box-header {
   border-radius: 5px;
   text-shadow: 0 1px var(--tertiary-shadow);
   box-shadow:
-    inset 0 1px 2px rgba(255, 255, 255, 0.5),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.25);
+    inset 0 1px 2px rgb(255, 255, 255, 0.5),
+    inset 0 -1px 2px rgb(0, 0, 0, 0.25);
   border: 1px solid var(--tertiary);
 
   &[href] {
@@ -686,7 +686,7 @@ img.avatar {
 .category-box-inner {
   background: var(--secondary);
   border-radius: 0 5px 5px 0;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
   border: 1px solid var(--secondary) !important;
 }
 
@@ -737,7 +737,7 @@ img.avatar {
 .menu-panel {
   margin-top: -1px;
   border: 1px solid var(--primary-low-mid);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 8px rgb(0, 0, 0, 0.12);
   border-radius: 5px;
 }
 
@@ -780,7 +780,7 @@ img.avatar {
 .body-page {
   box-sizing: border-box;
   background: var(--secondary);
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
   border-radius: 5px;
   padding: 20px;
   border: 1px solid var(--primary-low);
@@ -790,7 +790,7 @@ img.avatar {
 .user-main {
   box-sizing: border-box;
   background: var(--secondary);
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
   border-radius: 5px;
   padding: 20px;
   border: 1px solid var(--primary-low);
@@ -903,7 +903,7 @@ img.avatar {
     background: var(--secondary);
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
 
     details.advanced-filters {
       margin-top: 0;
@@ -936,7 +936,7 @@ img.avatar {
   background: var(--secondary);
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
 }
 
 // badges
@@ -967,7 +967,7 @@ img.avatar {
 .group-box {
   background: var(--secondary);
   border-radius: 5px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
 }
 
 .group-members .avatar {
@@ -987,13 +987,13 @@ img.avatar {
 .boxed.white {
   padding: 5px 20px;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
 }
 
 .alert.alert-info {
   border-radius: 5px;
   border: 1px solid var(--tertiary);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.07);
+  box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.07);
 }
 
 .popup-tip {
@@ -1056,7 +1056,7 @@ button.post-retort {
     max-width: calc(690px - 0.1em);
     margin-left: 75px;
 
-    @media screen and (max-width: 924px) {
+    @media screen and (width <= 924px) {
       max-width: unset;
       width: calc(85% - 25px);
     }
