@@ -1,5 +1,9 @@
 @import "sidebar";
 
+:root {
+  --d-post-control-border-radius: 0;
+}
+
 body {
   background: var(--primary-low);
 }
@@ -291,7 +295,7 @@ nav.post-controls .actions .double-button button.button-count:not(.my-likes) {
 
 .who-liked {
   margin-top: 0;
-  padding-top: 10px;
+  padding: 0;
   width: 98%;
 }
 
@@ -303,21 +307,13 @@ section.avatars.clearfix {
   background: var(--primary-low);
 
   .d-editor-button-bar {
+    font-size: var(--font-down-1);
     margin: 5px;
     border-bottom: none;
-    height: 29px;
 
     .btn {
       min-width: 25px;
-      height: 32px;
-      border-color: var(--primary-high);
-      margin: 0 2px;
-
-      @media screen and (width <= 400px) {
-        min-width: unset;
-        font-size: 0.85em;
-        padding: 0.27em;
-      }
+      border-color: var(--primary-medium);
     }
   }
 
@@ -327,9 +323,8 @@ section.avatars.clearfix {
 
   .btn:not(.create):hover {
     .d-icon {
-      color: var(--secondary);
+      color: var(--primary);
     }
-    background: var(--primary-medium);
   }
 
   .d-editor-button-bar .toolbar-popup-menu-options .btn.select-kit-header {
@@ -522,37 +517,35 @@ td.main-link {
   }
 }
 
-.nav-pills {
-  margin-left: 10px;
-}
+.navigation-container {
+  .nav-pills {
+    margin-left: 10px;
+  }
 
-.nav-pills > li.active > a,
-.nav-pills > li > a.active {
-  border-radius: 5px;
-  text-shadow: 0 1px var(--quaternary-shadow);
-  box-shadow:
-    inset 0 1px 2px rgb(255, 255, 255, 0.25),
-    inset 0 -1px 2px rgb(0, 0, 0, 0.25);
-  border: 1px solid var(--quaternary);
-}
+  .nav-pills > li.active > a,
+  .nav-pills > li > a.active {
+    border-radius: 5px;
+    text-shadow: 0 1px var(--quaternary-shadow);
+    box-shadow:
+      inset 0 1px 2px rgb(255, 255, 255, 0.25),
+      inset 0 -1px 2px rgb(0, 0, 0, 0.25);
+    border: 1px solid var(--quaternary);
+    background: var(--quaternary);
+    color: var(--secondary);
 
-.nav-pills > li > a:hover {
-  border-radius: 5px;
-}
+    &::after {
+      display: none;
+    }
 
-.btn:not(
-    .bulk-select,
-    .sidebar-section-header,
-    .close,
-    .period-chooser-header,
-    .btn-flat
-  ),
-.user-menu.revamped .btn.user-menu-tab {
-  border-radius: 5px;
-  border: 1px solid var(--primary-500);
-  box-shadow:
-    inset 0 1px 2px rgb(255, 255, 255, 0.5),
-    inset 0 -1px 2px rgb(0, 0, 0, 0.25);
+    .d-icon {
+      color: var(--secondary);
+    }
+  }
+
+  .nav-pills > li:not(.active) > a:hover {
+    color: var(--quaternary);
+    border-radius: 5px;
+  }
 }
 
 .user-menu.revamped .bottom-tabs {
@@ -745,18 +738,6 @@ img.avatar {
   .menu-tabs-container {
     border: none;
     padding: 0.5em 0;
-  }
-
-  .tabs-list .btn {
-    margin-right: 0.25em;
-    margin-bottom: 0.33em;
-    padding: 0.55em 0.75em;
-
-    &.active {
-      .d-icon {
-        color: var(--primary-high);
-      }
-    }
   }
 }
 
@@ -1077,4 +1058,37 @@ button.post-retort {
 .btn-flat.modal-close {
   border: none !important;
   box-shadow: none;
+}
+
+.archetype-private_message {
+  .regular.contents {
+    border: none;
+  }
+
+  .current-user-post .regular.contents {
+    background: transparent;
+  }
+
+  .post-menu-area {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+html.has-full-page-chat body #main-outlet .full-page-chat {
+  background: var(--secondary);
+  margin: 1.5em;
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.chat-channel {
+  height: calc(
+    var(--composer-vh, 1vh) * 100 - var(--main-outlet-offset, 0px) -
+      3.15em - var(--chat-header-offset, 0)
+  );
+}
+
+.full-page-chat .c-navbar-container {
+  border-radius: 5px 5px 0 0;
 }
