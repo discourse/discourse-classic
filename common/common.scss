@@ -518,38 +518,34 @@ td.main-link {
 }
 
 .navigation-container {
-
-.nav-pills {
-  margin-left: 10px;
-}
-
-.nav-pills > li.active > a,
-.nav-pills > li > a.active {
-  border-radius: 5px;
-  text-shadow: 0 1px var(--quaternary-shadow);
-  box-shadow:
-    inset 0 1px 2px rgb(255, 255, 255, 0.25),
-    inset 0 -1px 2px rgb(0, 0, 0, 0.25);
-  border: 1px solid var(--quaternary);
-  background: var(--quaternary);
-  color: var(--secondary);
-  &::after {
-    display: none;
+  .nav-pills {
+    margin-left: 10px;
   }
 
-  .d-icon {
+  .nav-pills > li.active > a,
+  .nav-pills > li > a.active {
+    border-radius: 5px;
+    text-shadow: 0 1px var(--quaternary-shadow);
+    box-shadow:
+      inset 0 1px 2px rgb(255, 255, 255, 0.25),
+      inset 0 -1px 2px rgb(0, 0, 0, 0.25);
+    border: 1px solid var(--quaternary);
+    background: var(--quaternary);
     color: var(--secondary);
+    &::after {
+      display: none;
+    }
+
+    .d-icon {
+      color: var(--secondary);
+    }
+  }
+
+  .nav-pills > li:not(.active) > a:hover {
+    color: var(--quaternary);
+    border-radius: 5px;
   }
 }
-
-.nav-pills > li:not(.active) > a:hover {
-  color: var(--quaternary);
-  border-radius: 5px;
-}
-
-}
-
-
 
 .user-menu.revamped .bottom-tabs {
   border-top: 0;
@@ -1064,19 +1060,34 @@ button.post-retort {
 }
 
 .archetype-private_message {
-
-   .regular.contents {
-  border: none;
+  .regular.contents {
+    border: none;
   }
 
   .current-user-post .regular.contents {
-  background: transparent;
-}
+    background: transparent;
+  }
 
-  .post-menu-area  {
+  .post-menu-area {
     margin: 0;
     padding: 0;
   }
-
 }
 
+html.has-full-page-chat body #main-outlet .full-page-chat {
+  background: var(--secondary);
+  margin: 1.5em;
+  box-shadow: 2px 2px 8px rgb(0, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.chat-channel {
+  height: calc(
+    var(--composer-vh, 1vh) * 100 - var(--main-outlet-offset, 0px) -
+      3.15em - var(--chat-header-offset, 0)
+  );
+}
+
+.full-page-chat .c-navbar-container {
+  border-radius: 5px 5px 0 0;
+}
